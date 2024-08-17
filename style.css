@@ -103,3 +103,77 @@ h1 {
 
     color: white;
 }
+
+.players div {
+    flex: 1;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-form > div {
+    align-self: center;
+    font-size: 24px;
+}
+
+.multiplayer-information {
+    flex-direction: row;
+    justify-content: stretch;
+    gap: 0;
+    flex-wrap: wrap;
+}
+
+.multiplayer-information label {
+    align-self: center;
+    font-size: 16px;
+}
+
+#player-name, #player-name-X, #player-name-O  {
+    height: 30px;
+}
+
+.player-form .separator, .xo-separator {
+    max-width: 5px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px;
+}
+
+.xo-separator {
+    background-color: black;
+}
+
+#symbol {
+    aspect-ratio: 1 / 1;
+    height: 30px;
+    width: auto;
+    text-align: center;
+}
+
+.player-form > button {
+    height: 30px;
+    width: auto;
+    font-size: 16px;
+    align-self: center;
+}
+
+.multiplayer-information > .vs {
+    max-width: 30px;
+}
+
+.multiplayer-information button {
+    max-width: 60px;
+}
+
+.ai {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 24px;
+}
+
+input:focus {
+    outline: none;
+    padding-left: 5px;
+}
