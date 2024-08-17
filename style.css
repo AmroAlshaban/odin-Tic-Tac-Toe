@@ -227,3 +227,27 @@ input:focus {
     background-color: rgb(66, 66, 66);
     transition: 0s;
 }
+
+.results {
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+
+    width: 100%;
+}
+
+.results button {
+    width: 100px;
+    font-size: 16px;
+}
+
+.results div {
+    align-self: center;
+
+    color: yellow;
+    font-weight: 1000;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+}
