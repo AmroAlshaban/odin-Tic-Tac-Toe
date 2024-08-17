@@ -80,3 +80,26 @@ h1 {
     background-color: rgb(66, 66, 66);
     transition: 0s;
 }
+
+.players-information {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.player-form {
+    flex: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    color: white;
+}
