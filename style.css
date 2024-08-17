@@ -177,3 +177,15 @@ input:focus {
     outline: none;
     padding-left: 5px;
 }
+
+.player-container {
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    color: white;
+    font-size: 44px;
+}
