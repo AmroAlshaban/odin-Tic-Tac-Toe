@@ -189,3 +189,41 @@ input:focus {
     color: white;
     font-size: 44px;
 }
+
+.board {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+
+    gap: 10px;
+    padding: 10px;
+}
+
+.grid {            
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+
+    margin-top: 20px;
+    aspect-ratio: 1 / 1;
+    height: 250px;
+    width: auto;
+}
+
+.grid button {
+    font-size: 36px;
+}
+
+.grid button:hover {
+    background-color: rgb(114, 114, 114);
+    color: white;
+    transition: 0.5s;
+}
+
+.grid button:active {
+    background-color: rgb(66, 66, 66);
+    transition: 0s;
+}
