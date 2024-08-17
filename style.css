@@ -40,3 +40,11 @@ h1 {
     font-family: cursive;
     color: rgb(255, 255, 255);
 }
+
+.separator {
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    align-self: stretch;
+}
