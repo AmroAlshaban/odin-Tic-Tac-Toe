@@ -82,7 +82,7 @@ h1 {
 }
 
 .players-information {
-    display: flex;
+    display: none;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 10px;
@@ -191,7 +191,7 @@ input:focus {
 }
 
 .board {
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
@@ -231,7 +231,7 @@ input:focus {
 .results {
     margin-top: 25px;
 
-    display: flex;
+    display: none;
     justify-content: space-around;
     gap: 40px;
 
