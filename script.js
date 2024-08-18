@@ -137,6 +137,11 @@ function AIplayer(gameflow, marker) {
     };
 };
 
+// --------------------------------- //
+// --------------------------------- //
+// --------------------------------- //
+// --------------------------------- //
+// --------------------------------- //
 
 const players = document.querySelector(".players");
 const singleplayer = document.querySelector(".singeplayer");
@@ -167,3 +172,35 @@ let playerO;
 let gameflow;
 let playerAI;
 let opposingPlayer;
+
+// --------------------------------- //
+// --------------------------------- //
+// --------------------------------- //
+// --------------------------------- //
+// --------------------------------- //
+
+singleplayer.addEventListener("click", () => {
+    singleplayerInformation.style.display = 'flex';
+    multiplayerInformation.style.display = 'none';
+
+    inputsMultiplayer.forEach((input) => {
+        if (input.type === "text") {
+            input.value = '';
+        } else if (input.type === "radio") {
+            input.checked = false;
+        };
+    });
+});
+
+multiplayer.addEventListener("click", () => {
+    multiplayerInformation.style.display = 'flex';
+    singleplayerInformation.style.display = 'none';
+
+    inputsSingeplayer.forEach((input) => {
+        if (input.type === "text") {
+            input.value = '';
+        } else if (input.type === "radio") {
+            input.checked = false;
+        };
+    });
+});
