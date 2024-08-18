@@ -137,14 +137,14 @@ function AIplayer(gameflow, marker) {
     };
 };
 
-// --------------------------------- //
-// --------------------------------- //
-// --------------------------------- //
-// --------------------------------- //
-// --------------------------------- //
+// ----------------------------------------- //
+// ----------------------------------------- //
+// ----------------------------------------- //
+// ----------------------------------------- //
+// ----------------------------------------- //
 
 const players = document.querySelector(".players");
-const singleplayer = document.querySelector(".singeplayer");
+const singleplayer = document.querySelector(".singleplayer");
 const singleplayerInformation = document.querySelector(".singleplayer-information");
 const multiplayer = document.querySelector(".multiplayer");
 const multiplayerInformation = document.querySelector(".multiplayer-information");
@@ -173,11 +173,12 @@ let gameflow;
 let playerAI;
 let opposingPlayer;
 
-// --------------------------------- //
-// --------------------------------- //
-// --------------------------------- //
-// --------------------------------- //
-// --------------------------------- //
+// ----------------------------------------- //
+// ----------------------------------------- //
+// ----------------------------------------- //
+// ----------------------------------------- //
+// ----------------------------------------- //
+
 
 singleplayer.addEventListener("click", () => {
     singleplayerInformation.style.display = 'flex';
@@ -204,7 +205,6 @@ multiplayer.addEventListener("click", () => {
         };
     });
 });
-
 
 singleplayerSubmit.addEventListener("click", () => {
     if (playerName.value.length > 0 && (xCheck.checked || oCheck.checked)) {
@@ -246,56 +246,53 @@ multiplayerSubmit.addEventListener("click", () => {
     
             xoButtons.forEach((button) => {
                 button.addEventListener('click', () => {
-                    button.addEventListener('click', () => {
-                        if (gameflow.turn(game.state()) === 'X' && playerX.ai === false) {
-                            button.textContent = playerX.marker;
-                            playerX.makeMove(game, button.className.split('').map(i => parseInt(i)));
-                            opposingPlayer = playerO;
-                            button.disabled = true;
-                        } else if (gameflow.turn(game.state()) === 'O' && playerO.ai === false) {
-                            button.textContent = playerO.marker;
-                            playerO.makeMove(game, button.className.split('').map(i => parseInt(i)));
-                            opposingPlayer = playerX;
-                            button.disabled = true;
+                    if (gameflow.turn(game.state()) === 'X' && playerX.ai === false) {
+                        button.textContent = playerX.marker;
+                        playerX.makeMove(game, button.className.split('').map(i => parseInt(i)));
+                        opposingPlayer = playerO;
+                        button.disabled = true;
+                    } else if (gameflow.turn(game.state()) === 'O' && playerO.ai === false) {
+                        button.textContent = playerO.marker;
+                        playerO.makeMove(game, button.className.split('').map(i => parseInt(i)));
+                        opposingPlayer = playerX;
+                        button.disabled = true;
+                    };
+
+                    if (opposingPlayer.ai === true) {
+                        let aiPosition = playerAI.optimalPosition(game.state());
+                        if (aiPosition !== null) {
+                            opposingPlayer.makeMove(game, aiPosition);
+                            let buttonPosition = game.state().length*aiPosition[0] + aiPosition[1] + 1;
+                            let opposingButton = document.querySelector(`.grid > button:nth-child(${buttonPosition})`);
+                            opposingButton.textContent = opposingPlayer.marker;
+                            opposingButton.disabled = true;
                         };
-                
-                        if (opposingPlayer.ai === true) {
-                            let aiPosition = playerAI.optimalPosition(game.state());
-                            if (aiPosition !== null) {
-                                opposingPlayer.makeMove(game, aiPosition);
-                                let buttonPosition = game.state().length*aiPosition[0] + aiPosition[1] + 1;
-                                let opposingButton = document.querySelector(`.grid > button:nth-child(${buttonPosition})`);
-                                opposingButton.textContent = opposingPlayer.marker;
-                                opposingButton.disabled = true;
-                            };
-                        };
+                    };
             
-                        if (gameflow.utility(game.state()) === 1) {
-                            result.textContent = `Game! ${playerX.name} wins.`;
-                            xoButtons.forEach((button) => {
-                                button.disabled = true;
-                                button.style.color = 'gray';
-                            });
-                        } else if (gameflow.utility(game.state()) === -1) {
-                            result.textContent = `Game! ${playerO.name} wins.`;
-                            xoButtons.forEach((button) => {
-                                button.disabled = true;
-                                button.style.color = 'gray';
-                            });
-                        } else if (gameflow.utility(game.state()) === 0) {
-                            result.textContent = `Game! It's a draw.`;
-                            xoButtons.forEach((button) => {
-                                button.disabled = true;
-                                button.style.color = 'gray';
-                            });
-                        };
-                    });
+                    if (gameflow.utility(game.state()) === 1) {
+                        result.textContent = `Game! ${playerX.name} wins.`;
+                        xoButtons.forEach((button) => {
+                            button.disabled = true;
+                            button.style.color = 'gray';
+                        });
+                    } else if (gameflow.utility(game.state()) === -1) {
+                        result.textContent = `Game! ${playerO.name} wins.`;
+                        xoButtons.forEach((button) => {
+                            button.disabled = true;
+                            button.style.color = 'gray';
+                        });
+                    } else if (gameflow.utility(game.state()) === 0) {
+                        result.textContent = `Game! It's a draw.`;
+                        xoButtons.forEach((button) => {
+                            button.disabled = true;
+                            button.style.color = 'gray';
+                        });
+                    };
                 });
             });
         };
     });
 });
-
 
 singleplayerSubmit.addEventListener("click", () => {
     if ((playerNameX.value.length > 0 && playerNameY.value.length > 0) || 
@@ -308,7 +305,6 @@ singleplayerSubmit.addEventListener("click", () => {
         };
     };
 });
-
 
 restart.addEventListener("click", () => {
     location.reload();
