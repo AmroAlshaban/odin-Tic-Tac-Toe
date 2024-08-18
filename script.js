@@ -159,3 +159,11 @@ const playerNameX = document.querySelector("#player-name-X");
 const playerNameY = document.querySelector("#player-name-O");
 const xCheck = document.querySelector("#symbol-X");
 const oCheck = document.querySelector("#symbol-O");
+
+let xoButtons;
+let game;
+let playerX;
+let playerO;
+let gameflow;
+let playerAI;
+let opposingPlayer;
