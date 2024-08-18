@@ -10,18 +10,18 @@ This project is part of [The Odin Project's](https://www.theodinproject.com/dash
 
 * The Multiplayer mode is a standard player .vs. player game. 
 
-The result of the game is declared underneath the board.
+The result of the game is declared below the board.
 
 ## Demo
 Check the demo [here](https://mathoverse100.github.io/odin-Tic-Tac-Toe/).
 
 ## Screenshots
 
-<img src="./images/computerDemo1.JPG" alt="Computer Demo 1">
-<img src="./images/computerDemo2.JPG" alt="Computer Demo 2">
-<img src="./images/computerDemo3.JPG" alt="Computer Demo 3">
-<img src="./images/computerDemo4.JPG" alt="Computer Demo 4">
-<img src="./images/computerDemo5.JPG" alt="Computer Demo 5">
+<img src="./images/computerDemo1.JPG" alt="Computer Demo 1" style="border: 2px solid white;">
+<img src="./images/computerDemo2.JPG" alt="Computer Demo 2" style="border: 2px solid white;">
+<img src="./images/computerDemo3.JPG" alt="Computer Demo 3" style="border: 2px solid white;">
+<img src="./images/computerDemo4.JPG" alt="Computer Demo 4" style="border: 2px solid white;">
+<img src="./images/computerDemo5.JPG" alt="Computer Demo 5" style="border: 2px solid white;">
 
 ## License
 
