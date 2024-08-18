@@ -252,6 +252,10 @@ input:focus {
     font-family: 'Times New Roman', Times, serif;
 }
 
+.restart {
+    align-self: center;
+}
+
 @media (max-width: 549px) {
     .sidebar {
         display: none;
