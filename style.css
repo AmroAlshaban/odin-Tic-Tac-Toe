@@ -215,6 +215,7 @@ input:focus {
 
 .grid button {
     font-size: 36px;
+    cursor: pointer;
 }
 
 .grid button:hover {
