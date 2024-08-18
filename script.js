@@ -28,7 +28,23 @@ function Gameflow() {
     };
 
     this.turn = (state) => {
-
+        let counterX = 0;
+        let counterO = 0;
+        
+        if (state.filter(row => row.includes(null)).length === 0) {
+            return null;
+        };
+    
+        state.forEach((row) => {
+            counterX += row.filter(position => position === 'X').length;
+            counterO += row.filter(position => position === 'O').length;
+        });
+    
+        if (counterX === counterO) {
+            return 'X';
+        } else {
+            return 'O';
+        };
     };
 
     this.result = (state, action) => {
