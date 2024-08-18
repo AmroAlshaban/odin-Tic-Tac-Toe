@@ -136,3 +136,26 @@ function AIplayer(gameflow, marker) {
         };
     };
 };
+
+
+const players = document.querySelector(".players");
+const singleplayer = document.querySelector(".singeplayer");
+const singleplayerInformation = document.querySelector(".singleplayer-information");
+const multiplayer = document.querySelector(".multiplayer");
+const multiplayerInformation = document.querySelector(".multiplayer-information");
+const inputsSingeplayer = document.querySelectorAll(".singleplayer-information input");
+const inputsMultiplayer = document.querySelectorAll(".multiplayer-information input");
+const board = document.querySelector(".board");
+const playerXContainer = document.querySelector(".player-container:first-child");
+const playerOContainer = document.querySelector(".player-container:last-child");
+const results = document.querySelector(".results");
+const restart = document.querySelector(".restart");
+const result = document.querySelector(".result");
+const reset = document.querySelector(".reset");
+const singleplayerSubmit = document.querySelector(".singleplayer-information button");
+const multiplayerSubmit = document.querySelector(".multiplayer-information button");
+const playerName = document.querySelector("#player-name");
+const playerNameX = document.querySelector("#player-name-X");
+const playerNameY = document.querySelector("#player-name-O");
+const xCheck = document.querySelector("#symbol-X");
+const oCheck = document.querySelector("#symbol-O");
