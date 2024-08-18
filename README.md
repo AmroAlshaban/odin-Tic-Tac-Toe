@@ -8,7 +8,9 @@ This project is part of [The Odin Project's](https://www.theodinproject.com/dash
 
 * The Singleplayer mode is a match between the player and the computer. It uses a Minimax algorithm (coded from scratch in JavaScript) to find the optimal play in every round.
 
-* The Multiplayer mode is a standard player .vs. player game. 
+* The Multiplayer mode is a standard player .vs. player game.
+
+I studied the Minimax algorithm from [CS50AI](https://cs50.harvard.edu/ai/2024/) in week 0. While they use Python in the course, the concepts carry over to any language.
 
 The result of the game is declared below the board.
 
