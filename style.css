@@ -232,7 +232,8 @@ input:focus {
     margin-top: 25px;
 
     display: none;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;    
     gap: 40px;
 
     width: 100%;
