@@ -11,3 +11,25 @@ function Player(name, marker, ai=false) {
     this.ai = ai;
     this.makeMove = (gameboard, action) => gameboard.board[action[0]][action[1]] = marker;
 };
+
+function Gameflow() {
+    this.actions = (state) => {
+
+    };
+
+    this.turn = (state) => {
+
+    };
+
+    this.result = (state, action) => {
+
+    };
+
+    this.terminal = (state) => {
+
+    };
+
+    this.utility = (state) => {
+
+    };
+};
