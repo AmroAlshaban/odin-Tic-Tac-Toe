@@ -308,3 +308,8 @@ singleplayerSubmit.addEventListener("click", () => {
         };
     };
 });
+
+
+restart.addEventListener("click", () => {
+    location.reload();
+});
