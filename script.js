@@ -204,3 +204,29 @@ multiplayer.addEventListener("click", () => {
         };
     });
 });
+
+
+singleplayerSubmit.addEventListener("click", () => {
+    if (playerName.value.length > 0 && (xCheck.checked || oCheck.checked)) {
+        playerXContainer.textContent = playerName.value;
+        playerOContainer.textContent = "Computer (Max Level)";
+
+        game = new Gameboard();
+        gameflow = new Gameflow();
+        playerX = new Player(xCheck.checked ? playerName.value : 'Computer', 'X', xCheck.checked ? false : true);
+        playerO = new Player(oCheck.checked ? playerName.value : 'Computer', 'O', oCheck.checked ? false : true);
+        playerAI = new AIplayer(gameflow, xCheck.checked ? 'O' : 'X');
+    };
+});
+
+multiplayerSubmit.addEventListener("click", () => {
+    if (playerNameX.value.length > 0 && playerNameY.value.length > 0) {
+        playerXContainer.textContent = playerNameX.value;
+        playerOContainer.textContent = playerNameY.value;
+
+        game = new Gameboard();
+        gameflow = new Gameflow();
+        playerX = new Player(playerNameX.value, 'X', ai=false);
+        playerO = new Player(playerNameY.value, 'O', ai=false);
+    };
+});
