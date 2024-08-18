@@ -101,6 +101,38 @@ function AIplayer(gameflow, marker) {
     this.marker = marker;
 
     this.optimalPosition = (state) => {
+        const allActions = gameflow.actions(state);
+        const scores = [];
     
+        if (allActions.length === 0) {
+            return null;
+        };
+    
+        allActions.forEach((action) => {
+            const score = minimax(gameflow.result(state, action));
+            scores.push(score);
+        });
+    
+        if (this.marker === 'X') {
+            const bestIndices = scores.map((score, index) => {
+                if (score === Math.max(...scores)) {
+                    return [score, index];
+                } else {
+                    return [score, null];
+                };
+            }).filter(scoreIndexPair => scoreIndexPair[1] !== null).map(pair => pair[1]);
+            const randomIndex = Math.floor(Math.random() * bestIndices.length);
+            return allActions[bestIndices[randomIndex]];
+        } else {
+            const bestIndices = scores.map((score, index) => {
+                if (score === Math.min(...scores)) {
+                    return [score, index];
+                } else {
+                    return [score, null];
+                };
+            }).filter(scoreIndexPair => scoreIndexPair[1] !== null).map(pair => pair[1]);
+            const randomIndex = Math.floor(Math.random() * bestIndices.length);
+            return allActions[bestIndices[randomIndex]];    
+        };
     };
 };
