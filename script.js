@@ -230,3 +230,25 @@ multiplayerSubmit.addEventListener("click", () => {
         playerO = new Player(playerNameY.value, 'O', ai=false);
     };
 });
+
+[singleplayerSubmit, multiplayerSubmit].forEach((submit) => {
+    submit.addEventListener("click", () => {
+        if ((playerNameX.value.length > 0 && playerNameY.value.length > 0) || 
+        (playerName.value.length > 0 && (xCheck.checked || oCheck.checked))) {
+            players.style.display = 'none';
+            singleplayerInformation.style.display = 'none';
+            multiplayerInformation.style.display = 'none';
+            board.style.display = 'flex';
+            results.style.display = 'flex';
+    
+            xoButtons = document.querySelectorAll(".grid > button");
+            let opposingPlayer = playerX.ai === true ? playerX : playerO;
+    
+            xoButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    // code here
+                });
+            });
+        };
+    });
+});
