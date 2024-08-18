@@ -78,11 +78,28 @@ function Gameflow() {
 
 function AIplayer(gameflow, marker) {
     function minimax(state) {
+        if (gameflow.terminal(state)) {
+            return gameflow.utility(state);
+        };
     
+        playerTurn = gameflow.turn(state);
+        score = playerTurn === 'X' ? -Infinity : Infinity;
+    
+        if (playerTurn === 'X') {
+            gameflow.actions(state).forEach((action) => {
+                score = Math.max(score, minimax(gameflow.result(state, action)));
+            });
+        } else {
+            gameflow.actions(state).forEach((action) => {
+                score = Math.min(score, minimax(gameflow.result(state, action)));
+            });
+        };
+    
+        return score;
     };
 
     this.marker = marker;
-    
+
     this.optimalPosition = (state) => {
     
     };
