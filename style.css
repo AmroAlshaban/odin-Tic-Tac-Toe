@@ -229,6 +229,14 @@ input:focus {
     transition: 0s;
 }
 
+.grid button:disabled, .grid button:disabled:hover, .grid button:disabled:active {
+    background-color: white;
+    color: black;
+    box-shadow: none;
+    cursor: auto;
+    transition: 0s;
+}
+
 .results {
     margin-top: 25px;
 
