@@ -31,7 +31,7 @@ function Gameflow() {
             return [false, null];
         };
     };
-    
+
     this.actions = (state) => {
         actions = [];
 
@@ -72,11 +72,6 @@ function Gameflow() {
         return newState;
     };
 
-    this.terminal = (state) => {
-
-    };
-
-    this.utility = (state) => {
-
-    };
+    this.terminal = (state) => evaluateBoard(state)[0];
+    this.utility = (state) => evaluateBoard(state)[1];
 };
