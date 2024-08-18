@@ -75,3 +75,15 @@ function Gameflow() {
     this.terminal = (state) => evaluateBoard(state)[0];
     this.utility = (state) => evaluateBoard(state)[1];
 };
+
+function AIplayer(gameflow, marker) {
+    function minimax(state) {
+    
+    };
+
+    this.marker = marker;
+    
+    this.optimalPosition = (state) => {
+    
+    };
+};
