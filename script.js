@@ -14,7 +14,17 @@ function Player(name, marker, ai=false) {
 
 function Gameflow() {
     this.actions = (state) => {
+        actions = [];
 
+        for (let i = 0; i < state.length; i++) {
+            for (let j = 0; j < state.length; j++) {
+                if (state[i][j] === null) {
+                    actions.push([i, j]);
+                };
+            };
+        };
+
+        return actions;
     };
 
     this.turn = (state) => {
