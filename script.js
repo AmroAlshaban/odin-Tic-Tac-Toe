@@ -295,3 +295,16 @@ multiplayerSubmit.addEventListener("click", () => {
         };
     });
 });
+
+
+singleplayerSubmit.addEventListener("click", () => {
+    if ((playerNameX.value.length > 0 && playerNameY.value.length > 0) || 
+    (playerName.value.length > 0 && (xCheck.checked || oCheck.checked))) {
+        if (playerX.ai === true) {
+            let startPosition = playerAI.optimalPosition(game.state());
+            let buttonPosition = game.state().length*startPosition[0] + startPosition[1] + 1;
+            opposingPlayer = playerX;
+            document.querySelector(`.grid > button:nth-child(${buttonPosition})`).dispatchEvent(new Event("click"));
+        };
+    };
+});
