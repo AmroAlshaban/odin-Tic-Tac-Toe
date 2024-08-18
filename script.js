@@ -48,7 +48,9 @@ function Gameflow() {
     };
 
     this.result = (state, action) => {
-
+        const newState = state.map(row => [...row]);
+        newState[action[0]][action[1]] = this.turn(newState);
+        return newState;
     };
 
     this.terminal = (state) => {
