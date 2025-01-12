@@ -15,7 +15,7 @@ I studied the Minimax algorithm from [CS50AI](https://cs50.harvard.edu/ai/2024/)
 The result of the game is declared below the board.
 
 ## Demo
-Check the demo [here](https://mathoverse100.github.io/odin-Tic-Tac-Toe/).
+Check the demo [here](https://amroalshaban.github.io/odin-Tic-Tac-Toe/).
 
 ## Screenshots
 
